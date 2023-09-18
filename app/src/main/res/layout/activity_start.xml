@@ -38,7 +38,7 @@
             android:id="@+id/sign_up"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#fffffff"
+            android:background="#ffffff"
             android:textColor="#455cde"
             android:text="Sign Up"
             android:textAllCaps="false" />
