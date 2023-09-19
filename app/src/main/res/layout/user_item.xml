@@ -40,7 +40,6 @@
             android:textSize="13sp"
             android:maxLines="1"
             android:layout_marginStart="5dp">
-
         </TextView>
 
 
@@ -51,12 +50,11 @@
         android:layout_height="40dp"
         android:id="@+id/btn_follow"
         android:textColor="@color/colorBlack"
-        android:background=""
+        android:theme="@style/Platform.MaterialComponents.Light"
         android:text="Follow"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:visibility="visible">
-
     </Button>
 
 </RelativeLayout>
