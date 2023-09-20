@@ -59,12 +59,26 @@
         android:padding="10dp"
         android:id="@+id/sign_up"/>
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Already a user? Login"
-        android:layout_marginTop="15dp"
-        android:id="@+id/login_user"/>
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already a user? "
+            android:layout_marginTop="15dp"
+            android:id="@+id/login_user"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login."
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_toEndOf="@+id/login_user"
+            android:id="@+id/login_button"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
