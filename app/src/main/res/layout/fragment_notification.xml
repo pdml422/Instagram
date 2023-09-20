@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="left|center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:text="@string/today"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="42.43dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/Avatar" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:text="@string/notification"
+                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="left"
+                        android:src="@drawable/image1" />
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="left"
+                        android:src="@drawable/image2" />
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="left"
+                        android:src="@drawable/image4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
