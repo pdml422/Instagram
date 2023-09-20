@@ -28,6 +28,16 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        eachDependency {
+            if ((requested.group == "org.jetbrains.kotlin") && (requested.name.startsWith("kotlin-stdlib"))) {
+                useVersion("1.8.0")
+            }
+        }
+    }
+}
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -37,6 +47,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.hendraanggrian.appcompat:socialview-autocomplete:0.1'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //EditProfile dependencies
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 }
