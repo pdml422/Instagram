@@ -326,7 +326,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/description1"
                             android:layout_marginStart="5dp"
-                            android:text="di canh?"
+                            android:text="Đừng rủ anh về quê nuôi cá và trồng thêm rau\nAnh thích thành phố chật chội để ta chồng lên nhau"
                             android:layout_toEndOf="@+id/author1"/>
 
                     </RelativeLayout>
@@ -349,6 +349,154 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="2 days ago"
+                        android:textColor="@color/colorAccent"/>
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/more2"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_more"
+                    android:layout_margin="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:id="@+id/image_profile2"
+                            android:src="@drawable/avatar3"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/username2"
+                            android:text="namnguyen"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_margin="5dp"/>
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            android:id="@+id/image_post2"
+                            android:src="@drawable/post3"
+                            tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/like2"
+                            android:src="@drawable/ic_heart"/>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/comment2"
+                            android:src="@drawable/ic_comment"
+                            android:layout_toEndOf="@+id/like2"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/share2"
+                            android:src="@drawable/ic_inbox"
+                            android:layout_toEndOf="@+id/comment2"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/save2"
+                            android:src="@drawable/ic_save"
+                            android:layout_alignParentEnd="true"/>
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:id="@+id/no_of_like2"
+                        android:text="100 likes"
+                        android:textStyle="bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/author2"
+                            android:layout_marginStart="10dp"
+                            android:textStyle="bold"
+                            android:text="namnguyen"/>
+
+                        <com.hendraanggrian.appcompat.socialview.widget.SocialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/description2"
+                            android:layout_marginStart="5dp"
+                            android:text="Anh yêu em như cây yêu lá\nNhưng em à có cây nào một lá đâu em"
+                            android:layout_toEndOf="@+id/author2" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/no_of_comment2"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="View all 69 comments"
+                        android:textColor="@color/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/post_date2"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="1 days ago"
                         android:textColor="@color/colorAccent"/>
 
 
