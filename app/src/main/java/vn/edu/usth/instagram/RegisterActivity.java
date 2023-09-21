@@ -16,15 +16,15 @@ import vn.edu.usth.instagram.R;
 import vn.edu.usth.instagram.RegisterActivity;
 
 public class RegisterActivity extends AppCompatActivity {
-    private Button login;
+    private Button login_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        login = findViewById(R.id.login_button);
+        login_button = findViewById(R.id.login_button);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RegisterActivity.this , LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
