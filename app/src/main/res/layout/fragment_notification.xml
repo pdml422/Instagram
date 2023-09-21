@@ -44,7 +44,7 @@
                 android:layout_width="44dp"
                 android:layout_height="42.43dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/Avatar"
+                android:src="@drawable/avatar0"
                 android:contentDescription="@string/avatar" />
             <LinearLayout
                 android:layout_width="0dp"
@@ -98,7 +98,7 @@
                 android:layout_width="44dp"
                 android:layout_height="42.43dp"
                 android:layout_gravity="center"
-                android:src="@drawable/Dupli"
+                android:src="@drawable/duplication"
                 android:contentDescription="@string/avatar"/>
             <LinearLayout
                 android:layout_width="350dp"
@@ -117,7 +117,7 @@
                     android:layout_width="44dp"
                     android:layout_height="50dp"
                     android:layout_gravity="left|center_vertical"
-                    android:src="@drawable/Yamete"
+                    android:src="@drawable/yametee"
                     android:contentDescription="@string/avatar"
                     tools:ignore="RtlHardcoded" />
             </LinearLayout>
@@ -183,7 +183,7 @@
                 android:layout_width="44dp"
                 android:layout_height="42.43dp"
                 android:layout_gravity="center"
-                android:src="@drawable/TangEmboHoaViEmQuaXinhDep"
+                android:src="@drawable/ricardoround"
                 android:contentDescription="@string/avatar"/>
             <LinearLayout
                 android:layout_width="350dp"
@@ -263,7 +263,7 @@
                         android:layout_width="44dp"
                         android:layout_height="50dp"
                         android:layout_gravity="left"
-                        android:src="@drawable/Hacco"
+                        android:src="@drawable/haccoman"
                         android:contentDescription="@string/avatar"
                         tools:ignore="RtlHardcoded" />
 
@@ -271,28 +271,28 @@
                         android:layout_width="44dp"
                         android:layout_height="50dp"
                         android:layout_gravity="left"
-                        android:src="@drawable/LuongLun"
+                        android:src="@drawable/luong"
                         android:contentDescription="@string/avatar"
                         tools:ignore="RtlHardcoded"/>
                     <ImageView
                         android:layout_width="44dp"
                         android:layout_height="50dp"
                         android:layout_gravity="left"
-                        android:src="@drawable/nakedMan"
+                        android:src="@drawable/nghianaked"
                         android:contentDescription="@string/avatar"
                         tools:ignore="RtlHardcoded"/>
                     <ImageView
                         android:layout_width="44dp"
                         android:layout_height="50dp"
                         android:layout_gravity="left"
-                        android:src="@drawable/Sowwy"
+                        android:src="@drawable/nghiasowwy"
                         android:contentDescription="@string/avatar"
                         tools:ignore="RtlHardcoded"/>
                     <ImageView
                         android:layout_width="44dp"
                         android:layout_height="50dp"
                         android:layout_gravity="left"
-                        android:src="@drawable/TangEmboHoa"
+                        android:src="@drawable/ricardo"
                         android:contentDescription="@string/avatar"
                         tools:ignore="RtlHardcoded"/>
 
@@ -404,7 +404,7 @@
                 android:layout_width="44dp"
                 android:layout_height="42.43dp"
                 android:layout_gravity="center"
-                android:src="@drawable/TangEmboHoaViEmQuaXinhDep"
+                android:src="@drawable/ricardoround"
 
                 android:contentDescription="@string/avatar"/>
 
