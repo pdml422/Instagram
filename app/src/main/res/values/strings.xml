@@ -2,5 +2,28 @@
     <string name="app_name">Instagram</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Notification">Notification</string>
+    <string name="avatar">avatar</string>
+
+
+    <string name="notification"><b>nghnam.27</b> liked your posts.</string>
+    <string name="notification1"><b>nghnam.27</b> and <b>DoMamPhat</b> liked <b>minhpham13113</b> posts.</string>
+    <string name="notification2"><b>Ong Liem</b> started following you. </string>
+    <string name="noti3"><b>DoMamPhat</b> liked 5 posts.</string>
+    <string name="notification4"><b>EmDepQua</b> started following you.</string>
+    <string name="notification5"><b>saladdua</b> started following you.</string>
+    <string name="notification6"><b>Ti ret</b> started following you.</string>
+
+
     <string name="today">Today</string>
+    <string name="yesterday"><b>Yesterday</b></string>
+    <string name="last30days"><b>Last 30 days</b></string>
+    <string name="older"><b>Older</b></string>
+    <string name="suggested"><b>Suggested for you</b></string>
+    <string name="message">Message</string>
+    <string name="wutdaheo">WutDaHeo</string>
+    <string name="follow">Follow</string>
+    <string name="emdepqua">EmDepQua</string>
+
+
 </resources>
