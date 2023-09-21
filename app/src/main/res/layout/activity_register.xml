@@ -66,15 +66,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="20dp"
             android:text="Already a user? "
             android:layout_marginTop="15dp"
             android:id="@+id/login_user"/>
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="7.5dp"
+            android:paddingStart="-15dp"
             android:text="Login."
-            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
             android:textColor="@color/colorPrimary"
             android:layout_toEndOf="@+id/login_user"
             android:id="@+id/login_button"/>

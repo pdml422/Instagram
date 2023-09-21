@@ -28,7 +28,7 @@
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#455cde"
+            android:background="@drawable/button_background"
             android:text="Log In"
             android:textAllCaps="false" />
         <Space
@@ -38,9 +38,9 @@
             android:id="@+id/sign_up"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ffffff"
+            android:background="@drawable/button_background"
             android:textColor="#ffffff"
-            android:text="Sign Up"
+            android:text="Register"
             android:textAllCaps="false" />
     </LinearLayout>
 

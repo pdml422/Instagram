@@ -32,12 +32,13 @@
         android:padding="10dp"
         android:id="@+id/password"/>
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot password?"
-        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
         android:textColor="#3797EF"
+        android:paddingEnd="-1dp"
         android:layout_gravity="right"
         android:id="@+id/forgot_password"/>
 
@@ -45,7 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
-        android:layout_marginTop="15dp"
         android:text="LOGIN"
         android:padding="10dp"
         android:id="@+id/login"/>
@@ -57,19 +57,20 @@
             android:id="@+id/register_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="25dp"
             android:text="New to Instagram? "
-            android:textSize="14sp"
             android:layout_marginTop="15dp" />
 
-        <TextView
+        <Button
             android:id="@+id/register_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="7.5dp"
+            android:paddingStart="-10dp"
             android:text="Register."
+            android:background="@android:color/transparent"
             android:textColor="@color/colorPrimary"
-            android:layout_toEndOf="@+id/register_user"
-            android:textSize="14sp"
-            android:layout_marginTop="15dp" />
+            android:layout_toEndOf="@+id/register_user" />
     </RelativeLayout>
 
 
