@@ -1,14 +1,29 @@
 package vn.edu.usth.instagram.Fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import vn.edu.usth.instagram.EditProfileActivity;
+import vn.edu.usth.instagram.FollowersActivity;
+import vn.edu.usth.instagram.MainActivity;
+import vn.edu.usth.instagram.OptionsActivity;
 import vn.edu.usth.instagram.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +72,41 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+    private ImageView options;
+    private Button edit_profile;
+    private TextView followers;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        options = view.findViewById(R.id.options);
+        edit_profile = view.findViewById(R.id.edit_profile);
+        followers = view.findViewById(R.id.followers);
+
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), OptionsActivity.class));
+
+            }
+        });
+
+        edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), EditProfileActivity.class));
+            }
+        });
+
+        followers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), FollowersActivity.class));
+            }
+        });
+
+
+        return view;
     }
 }

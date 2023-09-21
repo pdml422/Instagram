@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ProfileFragment">
+    tools:context=".Fragment.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:textStyle="bold"
                 android:id="@+id/username"
                 android:gravity="center"
-                android:text="minggphamm2803"/>
+                android:text="Minh Pham"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -57,11 +57,11 @@
                 android:id="@+id/top">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
                     android:id="@+id/image_profile"
                     android:layout_marginLeft="20dp"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@drawable/avatar1"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -109,7 +109,7 @@
                             android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textSize="18sp"
-                            android:text="1"/>
+                            android:text="2"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                 android:padding="12dp"
                 android:id="@+id/mid"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,7 +217,7 @@
                 <ImageView
                     android:layout_width="135dp"
                     android:layout_height="135dp"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@drawable/post1"/>
 
             </LinearLayout>
 
