@@ -25,7 +25,7 @@
                 android:textStyle="bold"
                 android:id="@+id/username"
                 android:gravity="center"
-                android:text="Minh Pham"/>
+                android:text="minhpham"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                             android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textSize="18sp"
-                            android:text="2"/>
+                            android:text="4953"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
                             android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textSize="18sp"
-                            android:text="2"/>
+                            android:text="1"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -217,6 +217,7 @@
                 <ImageView
                     android:layout_width="135dp"
                     android:layout_height="135dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/post1"/>
 
             </LinearLayout>
