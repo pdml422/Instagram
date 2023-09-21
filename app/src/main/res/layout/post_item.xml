@@ -117,8 +117,7 @@
                 android:id="@+id/description"
                 android:layout_marginStart="5dp"
                 android:text="toi dep trai qua'"
-                android:layout_toEndOf="@+id/author"
-                android:textColor="@color/colorAccent"/>
+                android:layout_toEndOf="@+id/author"/>
         </RelativeLayout>
 
         <TextView
