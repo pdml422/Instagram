@@ -32,7 +32,7 @@
                 android:id="@+id/search_bar"
                 android:background="@android:color/transparent"
                 android:hint="Search"
-                android:layout_marginStart="5dp">
+                android:layout_marginStart="20dp">
 
             </com.hendraanggrian.appcompat.socialview.widget.SocialAutoCompleteTextView>
 
@@ -51,22 +51,134 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_users"
+            <!--            NghiaUser-->
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/bar">
+                android:layout_height="wrap_content">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/image_profile"
+                    android:src="@drawable/avatar2">
 
-            <androidx.recyclerview.widget.RecyclerView
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/image_profile"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/username"
+                        android:text="nghiapm"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        android:layout_marginStart="5dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fullname"
+                        android:text="PhamMinhNghia"
+                        android:textSize="13sp"
+                        android:maxLines="1"
+                        android:layout_marginStart="5dp">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:id="@+id/btn_follow"
+                    android:textColor="@color/colorWhite"
+                    android:text="Follow"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="visible">
+                </Button>
+
+
+
+            </RelativeLayout>
+
+            <!--            SecondUser-->
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycler_view_tags"
-                android:layout_below="@id/recycler_view_users"
-                android:layout_marginTop="5dp">
+                android:layout_height="wrap_content">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/image_profile1"
+                    android:src="@drawable/avatar3">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/image_profile1"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/username1"
+                        android:text="namnguyen"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        android:layout_marginStart="5dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fullname1"
+                        android:text="NguyenHoangNam"
+                        android:textSize="13sp"
+                        android:maxLines="1"
+                        android:layout_marginStart="5dp">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:id="@+id/btn_follow1"
+                    android:textColor="@color/colorWhite"
+                    android:text="Follow"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="visible">
+                </Button>
+
+            </RelativeLayout>
+
+
 
         </LinearLayout>
 
