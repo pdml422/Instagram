@@ -11,7 +11,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:src="@drawable/logo"/>
 
     <EditText
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="7.5dp"
-            android:paddingStart="-15dp"
+            android:paddingStart="-23dp"
             android:text="Login."
             android:background="@android:color/transparent"
             android:textColor="@color/colorPrimary"
