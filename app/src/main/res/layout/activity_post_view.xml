@@ -66,7 +66,7 @@
                 android:id="@+id/image_post"
                 android:scaleType="centerCrop"
                 tools:ignore="MissingConstraints"
-                android:src="@drawable/post1"
+                android:src="@drawable/haccoman"
                 />
 
         </LinearLayout>
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/description"
                 android:layout_marginStart="5dp"
-                android:text="lan dau duoc di may bay"
+                android:text="i am a hacker"
                 android:layout_toEndOf="@+id/author"/>
         </RelativeLayout>
 
