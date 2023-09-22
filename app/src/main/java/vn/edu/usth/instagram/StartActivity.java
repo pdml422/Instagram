@@ -39,7 +39,7 @@ public class StartActivity extends AppCompatActivity {
 
         linearLayout.animate().alpha(0f).setDuration(1);
 
-        TranslateAnimation animation = new TranslateAnimation(0, 0, 300,0);
+        TranslateAnimation animation = new TranslateAnimation(0, 0, 0,-1000);
         animation.setDuration(1000);
         animation.setFillAfter(false);
         animation.setAnimationListener(new MyAnimationListener());
@@ -72,7 +72,7 @@ public class StartActivity extends AppCompatActivity {
         @Override
         public void onAnimationEnd(Animation animation) {
             iconImage.clearAnimation();
-            iconImage.setVisibility(View.VISIBLE);
+            iconImage.setVisibility(View.INVISIBLE);
             linearLayout.animate().alpha(1f).setDuration(1000);
         }
 
