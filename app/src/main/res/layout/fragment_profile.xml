@@ -213,12 +213,104 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/post1"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/haccoman"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nghianaked"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nghiasowwy"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ricardo"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/luong"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yametee"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar1"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar2"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar3"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar1"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar1"/>
+
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar1"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
