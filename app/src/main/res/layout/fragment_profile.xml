@@ -74,7 +74,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="45dp"
+                        android:layout_marginStart="40dp"
                         android:layout_gravity="center"
                         android:orientation="vertical">
 
@@ -127,13 +127,13 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/following"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/following"
                             android:layout_gravity="center"
-                            android:textStyle="bold"
+                            android:text="2"
                             android:textSize="18sp"
-                            android:text="2"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -213,12 +213,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/post1"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/haccoman"
+                        android:id="@+id/post_view"/>
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
