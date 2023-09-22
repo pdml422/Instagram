@@ -104,7 +104,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline1"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -141,7 +141,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline2"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -178,7 +178,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline3"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -215,7 +215,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline4"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -252,7 +252,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline5"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -289,7 +289,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline7"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -314,7 +314,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="?"
+                            android:text="KhongPhaiNam"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -326,7 +326,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline8"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"
@@ -363,7 +363,7 @@
                         android:layout_margin="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/storyOutline"
+                            android:id="@+id/storyOutline9"
                             android:layout_gravity="center"
                             app:cardBackgroundColor="#000000"
                             android:layout_width="55dp"

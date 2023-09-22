@@ -1,5 +1,6 @@
 package vn.edu.usth.instagram.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+import vn.edu.usth.instagram.OptionsActivity;
 import vn.edu.usth.instagram.R;
+import vn.edu.usth.instagram.StoriesActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +61,21 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    private CircleImageView  story1;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        story1 = view.findViewById(R.id.story1);
+
+        // Set a click event handler for the CircleImageView
+        story1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), StoriesActivity.class));
+            }
+        });
+
+        return view;
     }
 }
