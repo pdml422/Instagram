@@ -32,19 +32,10 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        iconImage = findViewById(R.id.icon_image);
         linearLayout = findViewById(R.id.linear_layout);
         sign_up = findViewById(R.id.sign_up);
         login = findViewById(R.id.login);
 
-        linearLayout.animate().alpha(0f).setDuration(1);
-
-        TranslateAnimation animation = new TranslateAnimation(0, 0, 0,-1000);
-        animation.setDuration(1000);
-        animation.setFillAfter(false);
-        animation.setAnimationListener(new MyAnimationListener());
-
-        iconImage.setAnimation(animation);
 
         sign_up.setOnClickListener(new View.OnClickListener()
         {
@@ -61,25 +52,6 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(new Intent(StartActivity.this , LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
-    }
-    private class MyAnimationListener implements Animation.AnimationListener {
-
-        @Override
-        public void onAnimationStart(Animation animation) {
-
-        }
-
-        @Override
-        public void onAnimationEnd(Animation animation) {
-            iconImage.clearAnimation();
-            iconImage.setVisibility(View.INVISIBLE);
-            linearLayout.animate().alpha(1f).setDuration(1000);
-        }
-
-        @Override
-        public void onAnimationRepeat(Animation animation) {
-
-        }
     }
 
     @Override
