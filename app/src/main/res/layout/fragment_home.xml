@@ -92,7 +92,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pham"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -129,7 +128,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nghia"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -166,7 +164,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Luong"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -203,7 +200,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tired"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -240,7 +236,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="G2"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -277,7 +272,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nam"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -314,7 +308,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="KhongPhaiNam"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -351,7 +344,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Be"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -388,7 +380,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gay"
                             android:layout_gravity="center"/>
 
                     </LinearLayout>
@@ -431,7 +422,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/username"
-                            android:text="nghiapm"
                             android:layout_gravity="center_vertical"
                             android:textSize="16sp"
                             android:textStyle="bold"
