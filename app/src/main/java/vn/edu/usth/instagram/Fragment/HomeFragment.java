@@ -61,20 +61,9 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private CircleImageView  story1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        story1 = view.findViewById(R.id.story1);
-
-        // Set a click event handler for the CircleImageView
-        story1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), StoriesActivity.class));
-            }
-        });
 
         return view;
     }
