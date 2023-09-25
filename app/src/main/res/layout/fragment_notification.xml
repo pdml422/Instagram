@@ -1,438 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+
+    android:layout_height="match_parent"
+
+    tools:context=".Fragment.NotificationFragment">
+
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+
+
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+
+        android:id="@+id/bar"
+
+        android:background="?android:attr/windowBackground">
 
 
-        <TextView
+
+
+        <androidx.appcompat.widget.Toolbar
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="bold"
-            android:text="@string/Notification"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"/>
-        <View
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#c0c0c0"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:gravity="left|center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:text="@string/today"
-            android:textStyle="bold"
-            android:layout_marginTop="2dp"
-            tools:ignore="RtlHardcoded" />
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toolbar"
+
+            android:background="?android:attr/windowBackground">
 
 
 
-        <!--First feed-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="108dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/avatar0"
-                android:contentDescription="@string/avatar" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+
+
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="left|center"
-                    android:text="@string/notification"
-                    android:textSize="16sp"
-                    tools:ignore="RtlHardcoded" />
-                <LinearLayout
-                    android:layout_width="match_parent"
+
+                    android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/avatar1"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded" />
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/avatar2"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded" />
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/avatar3"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <!-- 2nd feed-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_gravity="center"
-                android:src="@drawable/duplication"
-                android:contentDescription="@string/avatar"/>
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-                <TextView
-                    android:layout_width="290dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/notification1"
-                    android:textSize="16sp" />
-                <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="left|center_vertical"
-                    android:src="@drawable/yametee"
-                    android:contentDescription="@string/avatar"
-                    tools:ignore="RtlHardcoded" />
-            </LinearLayout>
-        </LinearLayout>
 
+                    android:text="@string/Notification"
 
+                    android:textSize="18sp"
 
-        <!-- 3rd feed -->
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#c0c0c0"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:gravity="left|center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:text="@string/yesterday"
-            android:textStyle="bold"
-            android:layout_marginTop="2dp"
-            tools:ignore="RtlHardcoded" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_gravity="center"
-                android:src="@drawable/avatar4"
-                android:contentDescription="@string/avatar"/>
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/notification2"
-                    android:textSize="16sp" />
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/message"
-                    tools:ignore="TouchTargetSizeCheck"/>
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ricardoround"
-                android:contentDescription="@string/avatar"/>
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/notification4"
-                    android:textSize="16sp" />
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/message"
-                    tools:ignore="TouchTargetSizeCheck"/>
-            </LinearLayout>
-        </LinearLayout>
-
-
-
-        <!--4th feed -->
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#c0c0c0"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:gravity="left|center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:text="@string/last30days"
-            android:textStyle="bold"
-            android:layout_marginTop="2dp"
-            tools:ignore="RtlHardcoded" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="108dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/confused"
-                android:contentDescription="@string/avatar"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="left|center"
-                    android:text="@string/noti3"
-                    android:textSize="16sp"
-                    tools:ignore="RtlHardcoded" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/haccoman"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded" />
-
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/luong"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded"/>
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/nghianaked"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded"/>
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/nghiasowwy"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded"/>
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/ricardo"
-                        android:contentDescription="@string/avatar"
-                        tools:ignore="RtlHardcoded"/>
-
-
-
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_gravity="center"
-                android:src="@drawable/avatar5"
-                android:contentDescription="@string/avatar"/>
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/notification6"
-                    android:textSize="16sp"
-                    android:contentDescription="@string/avatar"/>
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/message"
-                    tools:ignore="TouchTargetSizeCheck"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- 5th feed -->
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#c0c0c0"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:gravity="left|center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:text="@string/older"
-            android:textStyle="bold"
-            android:layout_marginTop="2dp"
-            tools:ignore="RtlHardcoded" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_gravity="center"
-                android:src="@drawable/avatar7"
-                android:contentDescription="@string/avatar"/>
-
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="210dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/wutdaheo"
                     android:textStyle="bold"
-                    android:textSize="16sp" />
 
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-
-                    android:text="@string/follow"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-            </LinearLayout>
-        </LinearLayout>
+                    android:textColor="@color/colorPrimary"/>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="42.43dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ricardoround"
-
-                android:contentDescription="@string/avatar"/>
-
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="210dp"
-                    android:layout_height="41dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/emdepqua"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/message"
-                    tools:ignore="TouchTargetSizeCheck"/>
-            </LinearLayout>
-        </LinearLayout>
 
 
-    </LinearLayout>
-</ScrollView>
+            </RelativeLayout>
+
+
+
+
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:id="@+id/recycler_view"
+
+        android:layout_below="@+id/bar"/>
+
+
+
+
+</RelativeLayout>
