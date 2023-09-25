@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "467588360833",
+    "project_id": "instagram-58614",
+    "storage_bucket": "instagram-58614.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467588360833:android:fd3dec8c94c40dd78dfb80",
+        "android_client_info": {
+          "package_name": "vn.edu.usth.instagram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACbEIR7UBZYPqXpXgQ-2OpO59MOPjQO2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
