@@ -20,9 +20,6 @@
             android:name=".FollowingActivity"
             android:exported="false" />
         <activity
-            android:name=".PostViewActivity"
-            android:exported="false" />
-        <activity
             android:name=".OptionsActivity"
             android:exported="false" />
         <activity

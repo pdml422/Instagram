@@ -48,12 +48,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bar">
 
-        <LinearLayout
+ <!--       <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--            NghiaUser-->
+            &lt;!&ndash;            NghiaUser&ndash;&gt;
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -120,7 +120,7 @@
 
             </RelativeLayout>
 
-            <!--            SecondUser-->
+            &lt;!&ndash;            SecondUser&ndash;&gt;
 
             <RelativeLayout
                 android:layout_marginTop="10dp"
@@ -315,7 +315,13 @@
             </RelativeLayout>
 
 
-        </LinearLayout>
+        </LinearLayout>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:id="@+id/recycler_view"/>
 
 
     </androidx.core.widget.NestedScrollView>
