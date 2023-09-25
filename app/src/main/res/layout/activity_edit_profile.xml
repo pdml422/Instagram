@@ -64,31 +64,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Change Photo"
             android:layout_gravity="center"
             android:id="@+id/change_photo"
             android:textColor="@color/colorPrimary"
-            android:textSize="16sp"/>
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
+
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fullname"
+            android:hint="Full name"
             android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"/>
+            app:met_floatingLabel="normal"
+            tools:ignore="HardcodedText" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/username"
+            android:hint="Username"
             android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"/>
+            app:met_floatingLabel="normal"
+            tools:ignore="HardcodedText" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bio"
+            android:hint="Bio"
             android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"/>
+            app:met_floatingLabel="normal"
+            tools:ignore="HardcodedText" />
 
 
     </LinearLayout>
