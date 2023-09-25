@@ -1,29 +1,21 @@
 package vn.edu.usth.instagram.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import vn.edu.usth.instagram.EditProfileActivity;
 import vn.edu.usth.instagram.FollowersActivity;
 import vn.edu.usth.instagram.FollowingActivity;
-import vn.edu.usth.instagram.MainActivity;
 import vn.edu.usth.instagram.OptionsActivity;
-import vn.edu.usth.instagram.PostViewActivity;
 import vn.edu.usth.instagram.R;
 
 
@@ -77,7 +69,6 @@ public class ProfileFragment extends Fragment {
     private ImageView options;
     private Button edit_profile;
     private TextView followers;
-    private ImageView post_view;
     private TextView following;
 
     @Override
@@ -87,7 +78,6 @@ public class ProfileFragment extends Fragment {
         options = view.findViewById(R.id.options);
         edit_profile = view.findViewById(R.id.edit_profile);
         followers = view.findViewById(R.id.followers);
-        post_view = view.findViewById(R.id.post_view);
         following = view.findViewById(R.id.following);
 
 
@@ -113,12 +103,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        post_view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), PostViewActivity.class));
-            }
-        });
+
 
         following.setOnClickListener(new View.OnClickListener() {
             @Override
