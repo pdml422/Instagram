@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.SearchFragment">
 
-    <!-- Search fragment layout -->
+    <!-- TODO: Update blank fragment layout -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
                 android:id="@+id/search_bar"
                 android:background="@android:color/transparent"
                 android:hint="Search"
-                android:layout_marginStart="20dp">
+                android:layout_marginStart="5dp">
 
             </com.hendraanggrian.appcompat.socialview.widget.SocialAutoCompleteTextView>
 
@@ -46,35 +46,34 @@
         android:id="@+id/recent"
         android:layout_below="@id/bar">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recent"
-                android:id="@+id/recent1"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="10dp"
-                android:textSize="18sp">
-            </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent"
+            android:id="@+id/recent1"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp">
+        </TextView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See all"
-                android:textColor="@color/colorPrimary"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="12dp"
-                android:layout_alignParentEnd="true"
-                android:textSize="15sp">
-            </TextView>
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See all"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:layout_alignParentEnd="true"
+            android:textSize="15sp">
+        </TextView>
 
 
     </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/recent">
@@ -84,134 +83,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--            NghiaUser-->
-
-            <RelativeLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_users"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bar">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/image_profile"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/avatar2">
+            </androidx.recyclerview.widget.RecyclerView>
 
-                </de.hdodenhof.circleimageview.CircleImageView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/image_profile"
-                    android:layout_marginStart="5dp"
-                    android:orientation="vertical"
-                    android:layout_centerVertical="true">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/username"
-                        android:text="nghiapm"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="15sp"
-                        android:layout_marginStart="5dp">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/fullname"
-                        android:text="PhamMinhNghia"
-                        android:textSize="13sp"
-                        android:maxLines="1"
-                        android:layout_marginStart="5dp">
-
-                    </TextView>
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:id="@+id/close_btn"
-                    android:src="@drawable/ic_close"
-                    android:layout_marginEnd="10dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true">
-                </ImageView>
-
-
-
-            </RelativeLayout>
-
-            <!--            SecondUser-->
-
-            <RelativeLayout
-                android:layout_marginTop="10dp"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/recycler_view_tags"
+                android:layout_below="@id/recycler_view_users"
+                android:layout_marginTop="5dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/image_profile1"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/avatar3">
-
-                </de.hdodenhof.circleimageview.CircleImageView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/image_profile1"
-                    android:layout_marginStart="5dp"
-                    android:orientation="vertical"
-                    android:layout_centerVertical="true">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/username1"
-                        android:text="namnguyen"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="15sp"
-                        android:layout_marginStart="5dp">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/fullname1"
-                        android:text="NguyenHoangNam"
-                        android:textSize="13sp"
-                        android:maxLines="1"
-                        android:layout_marginStart="5dp">
-
-                    </TextView>
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:id="@+id/close_btn2"
-                    android:src="@drawable/ic_close"
-                    android:layout_marginEnd="10dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true">
-                </ImageView>
-
-            </RelativeLayout>
-
-
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 
