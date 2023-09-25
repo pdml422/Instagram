@@ -27,14 +27,12 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/image_profile"
-                android:src="@mipmap/ic_launcher"
                 android:layout_margin="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
-                android:text="Username"
                 android:layout_gravity="center_vertical"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -97,7 +95,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:id="@+id/no_of_like"
-            android:text="100 likes"
             android:textStyle="bold"/>
 
         <RelativeLayout
@@ -108,15 +105,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/author"
                 android:layout_marginStart="10dp"
-                android:textStyle="bold"
-                android:text="Minh Pham"/>
+                android:textStyle="bold" />
 
             <com.hendraanggrian.appcompat.socialview.widget.SocialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/description"
                 android:layout_marginStart="5dp"
-                android:text="toi dep trai qua'"
                 android:layout_toEndOf="@+id/author"/>
         </RelativeLayout>
 
@@ -127,7 +122,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:text="View all 69 comments"
             android:textColor="@color/colorAccent"/>
 
         <TextView
@@ -137,7 +131,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:text="2 days ago"
             android:textColor="@color/colorAccent"/>
 
 
