@@ -7,7 +7,7 @@
     android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -42,12 +42,13 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot password?"
         android:background="@android:color/transparent"
         android:textColor="#3797EF"
+        android:padding="10dp"
         android:paddingEnd="-1dp"
         android:layout_gravity="right"
         android:id="@+id/forgot_password"/>
