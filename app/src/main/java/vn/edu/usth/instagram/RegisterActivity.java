@@ -13,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
@@ -24,7 +22,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
@@ -122,12 +119,10 @@ public class RegisterActivity extends AppCompatActivity {
                     if(txt_username.equals(user.getUsername())){
                         usernameFlag = 1;
                         usernameStatus.setText("Unavailable! Username already taken! Try something else.");
-//                        Toast.makeText(RegisterActivity.this,"Username already taken! Try something else.", Toast.LENGTH_SHORT).show();
                         return;
                     } else if(txt_username.equals("")){
                         usernameFlag = 1;
                         usernameStatus.setText("Unavailable! Please enter your username.");
-//                        Toast.makeText(RegisterActivity.this,"Please enter your username.", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
