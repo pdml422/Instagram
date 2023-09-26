@@ -5,18 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 //import com.google.firebase.auth.FirebaseAuth;
 
-import vn.edu.usth.instagram.LoginActivity;
-import vn.edu.usth.instagram.MainActivity;
-import vn.edu.usth.instagram.R;
-import vn.edu.usth.instagram.RegisterActivity;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -58,9 +54,9 @@ public class StartActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-//        if(FirebaseAuth.getInstance().getCurrentUser() != null){
-//            startActivity(new Intent(StartActivity.this, MainActivity.class));
-//            finish();
-//        }
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            startActivity(new Intent(StartActivity.this, MainActivity.class));
+            finish();
+        }
     }
 }
