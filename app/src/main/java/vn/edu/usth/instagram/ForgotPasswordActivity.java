@@ -3,6 +3,7 @@ package vn.edu.usth.instagram;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,6 +25,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     String strEmail;
     FirebaseAuth mAuth;
 
+    ProgressDialog pd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
 
         mAuth = FirebaseAuth.getInstance();
+        pd = new ProgressDialog(this);
 
         btnReset.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -56,9 +60,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void ResetPassword() {
+        pd.setMessage("Please Wait!");
+        pd.show();
         mAuth.sendPasswordResetEmail(strEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
+                pd.dismiss();
                 Toast.makeText(ForgotPasswordActivity.this, "Reset Password: A link has been sent to your registered Email", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
                 startActivity(intent);
@@ -67,6 +74,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                pd.dismiss();
                 Toast.makeText(ForgotPasswordActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

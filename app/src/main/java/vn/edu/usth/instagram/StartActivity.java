@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 
 //import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import vn.edu.usth.instagram.LoginActivity;
 import vn.edu.usth.instagram.MainActivity;
 import vn.edu.usth.instagram.R;
@@ -58,9 +60,9 @@ public class StartActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-//        if(FirebaseAuth.getInstance().getCurrentUser() != null){
-//            startActivity(new Intent(StartActivity.this, MainActivity.class));
-//            finish();
-//        }
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            startActivity(new Intent(StartActivity.this, MainActivity.class));
+            finish();
+        }
     }
 }
