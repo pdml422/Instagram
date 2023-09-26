@@ -37,8 +37,24 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/close"
+                    android:text="Edit Profile"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
-                    android:layout_toEndOf="@id/close"/>
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:text="SAVE"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
 
 
             </RelativeLayout>
@@ -62,42 +78,42 @@
             android:layout_margin="10dp"/>
 
         <TextView
+            android:id="@+id/change_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change Photo"
             android:layout_gravity="center"
-            android:id="@+id/change_photo"
+            android:text="Change Photo"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,TextContrastCheck" />
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:hint="Full name"
-            android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,VisualLintTextFieldSize,TextContrastCheck" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/username"
-            android:hint="Username"
-            android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"
-            tools:ignore="HardcodedText" />
-
-        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bio"
-            android:hint="Bio"
             android:layout_marginTop="20dp"
+            android:hint="Username"
             app:met_floatingLabel="normal"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,VisualLintTextFieldSize,TextContrastCheck" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Bio"
+            app:met_floatingLabel="normal"
+            tools:ignore="HardcodedText,VisualLintTextFieldSize,TextContrastCheck" />
 
 
     </LinearLayout>
