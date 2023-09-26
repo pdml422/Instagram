@@ -19,10 +19,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+
+import vn.edu.usth.instagram.Model.User;
 
 public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout username;
@@ -32,6 +39,9 @@ public class RegisterActivity extends AppCompatActivity {
     private Button register;
     private TextView loginUser;
     private Button login_button;
+    private Button uncheck;
+    private TextView usernameStatus;
+    private static int usernameFlag = 0;
 
     private DatabaseReference mRootRef;
     private FirebaseAuth mAuth;
@@ -50,6 +60,8 @@ public class RegisterActivity extends AppCompatActivity {
         register = findViewById(R.id.sign_up);
         loginUser = findViewById(R.id.login_user);
         login_button = findViewById(R.id.login_button);
+        uncheck = findViewById(R.id.check_username);
+        usernameStatus = findViewById(R.id.availability_username);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -87,48 +99,91 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    //Username k dc giong nhau
-
-
-
-    private void registerUser(String username, String name, String email, String password){
-
-        pd.setMessage("Please Wait!");
-        pd.show();
-
-        mAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+        uncheck.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onSuccess(AuthResult authResult) {
-                HashMap<String, Object> map = new HashMap<>();
-                map.put("name", name);
-                map.put("email", email);
-                map.put("username", username);
-                map.put("id", mAuth.getCurrentUser().getUid());
-
-
-                //ko chay
-                mRootRef.child("Users").child(mAuth.getCurrentUser().getUid()).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            pd.dismiss();
-                            Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                pd.dismiss();
-                Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                checkUsernameAvailability();
             }
         });
     }
+
+
+    private void checkUsernameAvailability(){
+
+        final String txt_username = username.getEditText().getText().toString();
+
+        usernameStatus.setVisibility(View.VISIBLE);
+        DatabaseReference mUsersRed = FirebaseDatabase.getInstance().getReference().child("Users");
+        mUsersRed.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    User user = snapshot.getValue(User.class);
+                    if(txt_username.equals(user.getUsername())){
+                        usernameFlag = 1;
+                        usernameStatus.setText("Unavailable! Username already taken! Try something else.");
+//                        Toast.makeText(RegisterActivity.this,"Username already taken! Try something else.", Toast.LENGTH_SHORT).show();
+                        return;
+                    } else if(txt_username.equals("")){
+                        usernameFlag = 1;
+                        usernameStatus.setText("Unavailable! Please enter your username.");
+//                        Toast.makeText(RegisterActivity.this,"Please enter your username.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+                usernameStatus.setText("Available!");
+                usernameFlag = 0;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void registerUser(final String username , final String fullname , String email , String password) {
+        pd.setMessage("Please Wait!");
+        pd.show();
+        if (usernameFlag == 0) {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                        String userid = firebaseUser.getUid();
+
+                        mRootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
+
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("id", userid);
+                        hashMap.put("username", username.toLowerCase());
+                        hashMap.put("fullname", fullname);
+
+                        mRootRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    pd.dismiss();
+                                    usernameStatus.setText("Available!");
+                                    Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+                    } else {
+                        pd.dismiss();
+                        Toast.makeText(RegisterActivity.this, "You can't register with this email and password!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        } else {
+            pd.dismiss();
+            Toast.makeText(this, "Please change the username!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
