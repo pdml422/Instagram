@@ -9,12 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +26,7 @@ import jp.shts.android.storiesprogressview.StoriesProgressView;
 import vn.edu.usth.instagram.Model.Story;
 import vn.edu.usth.instagram.Model.User;
 
-class StoryActivity extends AppCompatActivity implements StoriesProgressView.StoriesListener {
+public class StoriesActivity extends AppCompatActivity implements StoriesProgressView.StoriesListener {
 
     int counter = 0;
     long pressTime = 0L;
@@ -108,7 +105,7 @@ class StoryActivity extends AppCompatActivity implements StoriesProgressView.Sto
 
         //
         r_seen.setOnClickListener(view -> {
-            Intent intent = new Intent(StoryActivity.this, FollowersActivity.class);
+            Intent intent = new Intent(StoriesActivity.this, FollowersActivity.class);
             intent.putExtra("id", userid);
             intent.putExtra("storyid", storyids.get(counter));
             intent.putExtra("title", "views");
@@ -120,7 +117,7 @@ class StoryActivity extends AppCompatActivity implements StoriesProgressView.Sto
                     .child(userid).child(storyids.get(counter));
             reference.removeValue().addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
-                    Toast.makeText(StoryActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StoriesActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             });
@@ -192,7 +189,7 @@ class StoryActivity extends AppCompatActivity implements StoriesProgressView.Sto
 
                 storiesProgressView.setStoriesCount(images.size());
                 storiesProgressView.setStoryDuration(5000L);
-                storiesProgressView.setStoriesListener(StoryActivity.this);
+                storiesProgressView.setStoriesListener(StoriesActivity.this);
                 storiesProgressView.startStories(counter);
 
                 Glide.with(getApplicationContext()).load(images.get(counter)).into(image);
