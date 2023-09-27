@@ -3,16 +3,16 @@ package vn.edu.usth.instagram.Model;
 public class Post {
     private String description;
     private String imageurl;
-    private String postId;
+    private String postid;
     private String publisher;
 
     public Post() {
     }
 
-    public Post(String description, String imageurl, String postId, String publisher) {
+    public Post(String description, String imageurl, String postid, String publisher) {
         this.description = description;
         this.imageurl = imageurl;
-        this.postId = postId;
+        this.postid = postid;
         this.publisher = publisher;
     }
 
@@ -32,12 +32,12 @@ public class Post {
         this.imageurl = imageurl;
     }
 
-    public String getPostId() {
-        return postId;
+    public String getPostid() {
+        return postid;
     }
 
-    public void setPostId(String postId) {
-        this.postId = postId;
+    public void setPostid(String postid) {
+        this.postid = postid;
     }
 
     public String getPublisher() {
