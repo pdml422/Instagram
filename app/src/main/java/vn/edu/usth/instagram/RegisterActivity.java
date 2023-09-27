@@ -37,7 +37,10 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView loginUser;
     private Button login_button;
     private Button uncheck;
+    private String imageUrl;
     private TextView usernameStatus;
+
+
     private static int usernameFlag = 0;
 
     private DatabaseReference mRootRef;
@@ -138,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser(final String username , final String fullname , String email , String password) {
+    private void registerUser(final String username , final String name , String email , String password) {
         pd.setMessage("Please Wait!");
         pd.show();
         if (usernameFlag == 0) {
@@ -148,13 +151,15 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         String userid = firebaseUser.getUid();
+                        imageUrl = "default";
 
                         mRootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
 
                         HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("imagerul", imageUrl);
                         hashMap.put("id", userid);
                         hashMap.put("username", username.toLowerCase());
-                        hashMap.put("fullname", fullname);
+                        hashMap.put("name", name);
 
                         mRootRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
