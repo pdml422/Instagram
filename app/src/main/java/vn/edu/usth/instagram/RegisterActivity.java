@@ -13,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
@@ -24,7 +22,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
@@ -40,7 +37,11 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView loginUser;
     private Button login_button;
     private Button uncheck;
+    private String imageUrl;
+    private String bio;
     private TextView usernameStatus;
+
+
     private static int usernameFlag = 0;
 
     private DatabaseReference mRootRef;
@@ -119,15 +120,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class);
-                    if(txt_username.equals(user.getUsername())){
+                    if (txt_username.equals(user.getUsername())){
                         usernameFlag = 1;
-                        usernameStatus.setText("Unavailable! Username already taken! Try something else.");
-//                        Toast.makeText(RegisterActivity.this,"Username already taken! Try something else.", Toast.LENGTH_SHORT).show();
+                        usernameStatus.setText("Unavailable! Username alredy taken! Try something else.");
                         return;
                     } else if(txt_username.equals("")){
                         usernameFlag = 1;
-                        usernameStatus.setText("Unavailable! Please enter your username.");
-//                        Toast.makeText(RegisterActivity.this,"Please enter your username.", Toast.LENGTH_SHORT).show();
+                        usernameStatus.setText("Unavailable! Please enter an username.");
                         return;
                     }
                 }
@@ -140,10 +139,9 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
-    private void registerUser(final String username , final String fullname , String email , String password) {
+    private void registerUser(final String username , final String name , String email , String password) {
         pd.setMessage("Please Wait!");
         pd.show();
         if (usernameFlag == 0) {
@@ -153,13 +151,17 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         String userid = firebaseUser.getUid();
+                        imageUrl = "default";
+                        bio = "";
 
                         mRootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
 
                         HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("imagerul", imageUrl);
+                        hashMap.put("bio", bio);
                         hashMap.put("id", userid);
                         hashMap.put("username", username.toLowerCase());
-                        hashMap.put("fullname", fullname);
+                        hashMap.put("name", name);
 
                         mRootRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
