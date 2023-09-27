@@ -38,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button login_button;
     private Button uncheck;
     private String imageUrl;
+    private String bio;
     private TextView usernameStatus;
 
 
@@ -138,7 +139,6 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void registerUser(final String username , final String name , String email , String password) {
@@ -152,11 +152,13 @@ public class RegisterActivity extends AppCompatActivity {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         String userid = firebaseUser.getUid();
                         imageUrl = "default";
+                        bio = "";
 
                         mRootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
 
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("imagerul", imageUrl);
+                        hashMap.put("bio", bio);
                         hashMap.put("id", userid);
                         hashMap.put("username", username.toLowerCase());
                         hashMap.put("name", name);
