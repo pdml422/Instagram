@@ -39,7 +39,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@id/close"
                     android:text="Edit Profile"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,TextContrastCheck" />
 
@@ -89,11 +89,11 @@
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/fullname"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Full name"
+            android:hint="Name"
             app:met_floatingLabel="normal"
             tools:ignore="HardcodedText,VisualLintTextFieldSize,TextContrastCheck" />
 

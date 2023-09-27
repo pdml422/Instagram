@@ -36,7 +36,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private View imageProfile;
     private TextView save;
     private TextView changePhoto;
-    private MaterialEditText fullname;
+    private MaterialEditText name;
     private MaterialEditText username;
     private MaterialEditText bio;
 
@@ -60,7 +60,7 @@ public class EditProfileActivity extends AppCompatActivity {
         imageProfile = findViewById(R.id.image_profile);
         save = findViewById(R.id.save);
         changePhoto = findViewById(R.id.change_photo);
-        fullname = findViewById(R.id.fullname);
+        name = findViewById(R.id.name);
         username = findViewById(R.id.username);
         bio = findViewById(R.id.bio);
 
@@ -71,7 +71,7 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                fullname.setText(user.getName());
+                name.setText(user.getName());
                 username.setText(user.getUsername());
                 bio.setText(user.getBio());
                 Picasso.get().load(user.getImageurl()).into((ImageView) imageProfile);
@@ -96,7 +96,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private void updateProfile() {
         HashMap<String, Object> map = new HashMap<>();
-        map.put("fullname", fullname.getText().toString());
+        map.put("name", name.getText().toString());
         map.put("username", username.getText().toString());
         map.put("bio", bio.getText().toString());
 
