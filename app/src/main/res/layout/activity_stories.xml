@@ -61,7 +61,7 @@
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@id/story_photo"
             android:text="username"
-            android:textColor="#039BE5"
+            android:textColor="@color/colorWhite"
             android:textSize="15sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
