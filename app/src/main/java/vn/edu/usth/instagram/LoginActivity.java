@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         forgot_password = findViewById(R.id.forgot_password);
 
         mAuth = FirebaseAuth.getInstance();
+        pd = new ProgressDialog(this);
 
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +77,6 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            pd.dismiss();
                             Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

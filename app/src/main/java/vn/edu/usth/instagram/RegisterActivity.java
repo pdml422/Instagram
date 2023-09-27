@@ -118,13 +118,11 @@ public class RegisterActivity extends AppCompatActivity {
                     User user = snapshot.getValue(User.class);
                     if (txt_username.equals(user.getUsername())){
                         usernameFlag = 1;
-                        usernameStatus.setText("Unavailable!");
-                        Toast.makeText(RegisterActivity.this, "Username alredy taken! Try something else.", Toast.LENGTH_SHORT).show();
+                        usernameStatus.setText("Unavailable! Username alredy taken! Try something else.");
                         return;
                     } else if(txt_username.equals("")){
                         usernameFlag = 1;
-                        usernameStatus.setText("Unavailable!");
-                        Toast.makeText(RegisterActivity.this, "Please enter an username.", Toast.LENGTH_SHORT).show();
+                        usernameStatus.setText("Unavailable! Please enter an username.");
                         return;
                     }
                 }
