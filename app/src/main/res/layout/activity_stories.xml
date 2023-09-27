@@ -2,15 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".StoriesActivity">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:contentDescription="@null"
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:id="@+id/image" />
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,35 +17,25 @@
         android:orientation="horizontal">
 
         <View
+            android:id="@+id/reverse"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <View
+            android:id="@+id/skip"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_close"
-            tools:ignore="ContentDescription" />
+            android:layout_weight="1" />
     </LinearLayout>
-
 
     <jp.shts.android.storiesprogressview.StoriesProgressView
         android:id="@+id/stories"
-        android:layout_width="match_parent"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
+        android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
         android:layout_marginTop="8dp" />
 
     <RelativeLayout
@@ -55,11 +44,11 @@
         android:layout_below="@id/stories"
         android:layout_margin="10dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_centerVertical="true"
-        android:id="@+id/story_photo"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/story_photo"/>
 
         <TextView
             android:id="@+id/story_username"
@@ -71,11 +60,56 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@id/story_photo"
-            android:text="Phi Doan Lon Ton"
-            android:textColor="@color/white"
+            android:text="username"
+            android:textColor="@color/colorWhite"
             android:textSize="15sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/r_seen"
+        android:background="#20000000"
+        android:padding="3dp"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_story_view"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription,HardcodedText" />
+
+        <TextView
+            android:id="@+id/seen_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:text="0"
+            android:textColor="#607D8B"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_story_delete"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:padding="3dp"
+        android:id="@+id/story_delete"
+        android:background="#20000000"
+        tools:ignore="ContentDescription" />
+
 </RelativeLayout>
