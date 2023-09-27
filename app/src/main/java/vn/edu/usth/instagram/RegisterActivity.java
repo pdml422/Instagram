@@ -116,13 +116,15 @@ public class RegisterActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class);
-                    if(txt_username.equals(user.getUsername())){
+                    if (txt_username.equals(user.getUsername())){
                         usernameFlag = 1;
-                        usernameStatus.setText("Unavailable! Username already taken! Try something else.");
+                        usernameStatus.setText("Unavailable!");
+                        Toast.makeText(RegisterActivity.this, "Username alredy taken! Try something else.", Toast.LENGTH_SHORT).show();
                         return;
                     } else if(txt_username.equals("")){
                         usernameFlag = 1;
-                        usernameStatus.setText("Unavailable! Please enter your username.");
+                        usernameStatus.setText("Unavailable!");
+                        Toast.makeText(RegisterActivity.this, "Please enter an username.", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
