@@ -84,36 +84,63 @@ public class ProfileFragment extends Fragment {
         getFollowersAndFollowingCount();
         getPostCount();
 
-
-
-
-
-        options.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), OptionsActivity.class));
-
-            }
-        });
+        if(profileId.equals(fUser.getUid())){
+            edit_profile.setText("Edit Profile");
+        }
+        else {
+            checkFollowingStatus();
+        }
 
         edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), EditProfileActivity.class));
+            public void onClick(View view) {
+                String btnText = edit_profile.getText().toString();
+                if (btnText.equals("Edit Profile")) {
+                    startActivity(new Intent(getContext(), EditProfileActivity.class));
+                }
+                else {
+                    if (btnText.equals("follow")) {
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(fUser.getUid())
+                                .child("following").child(profileId).setValue(true);
+
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(profileId)
+                                .child("followers").child(fUser.getUid()).setValue(true);
+                    } else {
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(fUser.getUid())
+                                .child("following").child(profileId).removeValue();
+
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(profileId)
+                                .child("followers").child(fUser.getUid()).removeValue();
+                    }
+                }
             }
         });
 
-        followers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), FollowersActivity.class));
-            }
-        });
+
 
 
 
 
         return view;
+    }
+
+    private void checkFollowingStatus(){
+        FirebaseDatabase.getInstance().getReference().child("Follow").child(fUser.getUid()).child("following").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child(profileId).exists()) {
+                    edit_profile.setText("following");
+                }
+                else {
+                    edit_profile.setText("follow");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void getPostCount() {
