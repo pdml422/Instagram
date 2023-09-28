@@ -22,7 +22,7 @@
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".StoriesActivity"
+            android:name=".StoryActivity"
             android:exported="false" />
         <activity
             android:name=".OptionsActivity"
