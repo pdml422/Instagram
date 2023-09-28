@@ -30,8 +30,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/image_profile"
-            android:src="@mipmap/ic_launcher"/>
+            android:id="@+id/image_profile"/>
 
         <EditText
             android:layout_width="match_parent"
