@@ -1,5 +1,6 @@
 package vn.edu.usth.instagram.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,6 +83,7 @@ public class HomeFragment extends Fragment {
                     followingList.add(snapshot.getKey());
                 }
                 readPosts();
+                readStory();
 
             }
 
@@ -121,6 +123,7 @@ public class HomeFragment extends Fragment {
     private void readStory() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Story");
         reference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 long timecurrent = System.currentTimeMillis();

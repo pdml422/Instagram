@@ -30,7 +30,7 @@ import java.util.HashMap;
 public class AddStoryActivity extends AppCompatActivity {
 
     private Uri mImageUri;
-    String miUrlOk = "";
+    String myUrl = "";
     private StorageTask uploadTask;
     StorageReference storageRef;
 
@@ -55,7 +55,7 @@ public class AddStoryActivity extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadImage_10(){
+    private void uploadImage_story(){
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setMessage("Posting");
         pd.show();
@@ -77,7 +77,7 @@ public class AddStoryActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Uri> task) {
                     if (task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
-                        miUrlOk = downloadUri.toString();
+                        myUrl = downloadUri.toString();
 
                         String myid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -88,7 +88,7 @@ public class AddStoryActivity extends AppCompatActivity {
                         long timeend = System.currentTimeMillis()+86400000; // 1 day later
 
                         HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("imageurl", miUrlOk);
+                        hashMap.put("imageurl", myUrl);
                         hashMap.put("timestart", ServerValue.TIMESTAMP);
                         hashMap.put("timeend", timeend);
                         hashMap.put("storyid", storyid);
@@ -124,7 +124,7 @@ public class AddStoryActivity extends AppCompatActivity {
             //Image Uri will not be null for RESULT_OK
             Uri uri = data.getData();
 
-            uploadImage_10();
+            uploadImage_story();
 
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show();
