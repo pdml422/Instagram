@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
         recyclerView_story = view.findViewById(R.id.recycler_view_story);
         recyclerView_story.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView_story.setLayoutManager(linearLayoutManager);
+        recyclerView_story.setLayoutManager(linearLayoutManager1);
         storyList = new ArrayList<>();
         storyAdapter = new StoryAdapter(getContext(), storyList);
         recyclerView_story.setAdapter(storyAdapter);
