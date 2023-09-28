@@ -56,11 +56,13 @@ public class HomeFragment extends Fragment {
         //Stories
         recyclerView_story = view.findViewById(R.id.recycler_view_story);
         recyclerView_story.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext() ,
+                LinearLayoutManager.HORIZONTAL , false);
         recyclerView_story.setLayoutManager(linearLayoutManager1);
         storyList = new ArrayList<>();
-        storyAdapter = new StoryAdapter(getContext(), storyList);
+        storyAdapter = new StoryAdapter(getContext() , storyList);
         recyclerView_story.setAdapter(storyAdapter);
+
 
 
         followingList = new ArrayList<>();
@@ -116,34 +118,31 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void readStory(){
+    private void readStory() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Story");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 long timecurrent = System.currentTimeMillis();
                 storyList.clear();
-                storyList.add(new Story("", 0, 0, "",
-                        FirebaseAuth.getInstance().getCurrentUser().getUid()));
-                for (String id : followingList) {
+                storyList.add(new Story("" , 0 , 0 , "" ,FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                for (String id : followingList){
                     int countStory = 0;
                     Story story = null;
-                    for (DataSnapshot snapshot : dataSnapshot.child(id).getChildren()) {
+                    for (DataSnapshot snapshot : dataSnapshot.child(id).getChildren()){
                         story = snapshot.getValue(Story.class);
-                        if (timecurrent > story.getTimestart() && timecurrent < story.getTimeend()) {
+                        if (timecurrent > story.getTimestart() && timecurrent < story.getTimeend()){
                             countStory++;
                         }
                     }
-                    if (countStory > 0){
+                    if (countStory > 0)
                         storyList.add(story);
-                    }
                 }
-
                 storyAdapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
