@@ -1,15 +1,14 @@
 package vn.edu.usth.instagram;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.ProgressDialog;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
