@@ -1,6 +1,7 @@
 package vn.edu.usth.instagram.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import vn.edu.usth.instagram.MainActivity;
 import vn.edu.usth.instagram.Model.User;
 import vn.edu.usth.instagram.R;
 
@@ -74,6 +76,24 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
 
                     FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId()).child("followers").child(firebaseUser.getUid()).removeValue();
                 }
+            }
+        });
+
+        holder.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MainActivity.class);
+                intent.putExtra("publisherId", user.getId());
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MainActivity.class);
+                intent.putExtra("publisherId", user.getId());
+                mContext.startActivity(intent);
             }
         });
     }

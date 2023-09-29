@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import vn.edu.usth.instagram.Fragment.ProfileFragment;
 import vn.edu.usth.instagram.MainActivity;
 import vn.edu.usth.instagram.Model.Comment;
 import vn.edu.usth.instagram.Model.User;
@@ -89,13 +91,21 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
         holder.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(mContext, MainActivity.class);
                 intent.putExtra("publisherId", comment.getPublisher());
                 mContext.startActivity(intent);
             }
         });
 
+        holder.username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MainActivity.class);
+                intent.putExtra("publisherId", comment.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

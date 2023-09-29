@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import vn.edu.usth.instagram.CommentActivity;
+import vn.edu.usth.instagram.Fragment.ProfileFragment;
 import vn.edu.usth.instagram.Model.Post;
 import vn.edu.usth.instagram.Model.User;
 import vn.edu.usth.instagram.R;
@@ -125,7 +127,41 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Viewholder>{
             }
         });
 
+        holder.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.getSharedPreferences("PROFILE", Context.MODE_PRIVATE)
+                        .edit().putString("profileId", post.getPublisher()).apply();
+
+                ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ProfileFragment()).commit();
+            }
+        });
+
+        holder.username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.getSharedPreferences("PROFILE", Context.MODE_PRIVATE)
+                        .edit().putString("profileId", post.getPublisher()).apply();
+
+                ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ProfileFragment()).commit();
+            }
+        });
+
+        holder.author.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.getSharedPreferences("PROFILE", Context.MODE_PRIVATE)
+                        .edit().putString("profileId", post.getPublisher()).apply();
+
+                ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ProfileFragment()).commit();
+            }
+        });
+
     }
+
 
     @Override
     public int getItemCount() {
