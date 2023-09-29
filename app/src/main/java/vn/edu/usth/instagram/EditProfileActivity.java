@@ -48,6 +48,8 @@ public class EditProfileActivity extends AppCompatActivity {
     private MaterialEditText username;
     private MaterialEditText bio;
 
+    private TextView change_photo;
+
     private FirebaseUser firebaseUser;
 
     private Uri mImageUri;
@@ -66,6 +68,7 @@ public class EditProfileActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         username.setEnabled(false);
         bio = findViewById(R.id.bio);
+        change_photo = findViewById(R.id.change_photo);
 
         Toast.makeText(EditProfileActivity.this, "You can't change your username! Contact admin.", Toast.LENGTH_SHORT).show();
 
@@ -98,6 +101,17 @@ public class EditProfileActivity extends AppCompatActivity {
 
 
         image_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImagePicker.with(EditProfileActivity.this)
+                        .crop()	    			//Crop image(Optional), Check Customization for more option
+                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .start(101);
+            }
+        });
+
+        change_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ImagePicker.with(EditProfileActivity.this)
