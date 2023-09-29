@@ -122,7 +122,7 @@ public class AddStoryActivity extends AppCompatActivity {
 
         if (resultCode == Activity.RESULT_OK) {
             //Image Uri will not be null for RESULT_OK
-            Uri uri = data.getData();
+            mImageUri = data.getData();
 
             uploadImage_story();
 
