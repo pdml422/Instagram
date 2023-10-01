@@ -50,6 +50,7 @@ public abstract class NotificationAdapter extends RecyclerView.Adapter<Notificat
         return new NotificationAdapter.ViewHolder(view);
     }
 
+
     @Override
     public int getItemCount() {
         return mNotifications.size();
@@ -71,5 +72,40 @@ public abstract class NotificationAdapter extends RecyclerView.Adapter<Notificat
             comment = itemView.findViewById(R.id.comment);
         }
     }
+
+    private void getPostImage(final ImageView imageView, String postId) {
+        FirebaseDatabase.getInstance().getReference().child("Posts").child(postId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Post post = dataSnapshot.getValue(Post.class);
+                Picasso.get().load(post.getImageurl()).placeholder(R.mipmap.ic_launcher).into(imageView);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
+    private void getUser(final ImageView imageView, final TextView textView, String userId) {
+        FirebaseDatabase.getInstance().getReference().child("Users").child(userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                if (user.getImageurl().equals("default")) {
+                    imageView.setImageResource(R.mipmap.ic_launcher);
+                } else {
+                    Picasso.get().load(user.getImageurl()).into(imageView);
+                }
+                textView.setText(user.getUsername());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+}
