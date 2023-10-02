@@ -32,7 +32,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public abstract class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
+public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
 
     private Context mContext;
     private List<Notification> mNotifications;
@@ -50,6 +50,41 @@ public abstract class NotificationAdapter extends RecyclerView.Adapter<Notificat
         return new NotificationAdapter.ViewHolder(view);
     }
 
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        final Notification notification = mNotifications.get(position);
+
+        getUser(holder.imageProfile, holder.username, notification.getUserid());
+        holder.comment.setText(notification.getText());
+
+        if (notification.isIsPost()) {
+            holder.postImage.setVisibility(View.VISIBLE);
+            getPostImage(holder.postImage, notification.getPostid());
+        } else {
+            holder.postImage.setVisibility(View.GONE);
+        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (notification.isIsPost()) {
+                    mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE)
+                            .edit().putString("postid", notification.getPostid()).apply();
+
+                    ((FragmentActivity)mContext).getSupportFragmentManager()
+                            .beginTransaction().replace(R.id.fragment_container, new PostDetailFragment()).commit();
+                } else {
+                    mContext.getSharedPreferences("PROFILE", Context.MODE_PRIVATE)
+                            .edit().putString("profileId", notification.getUserid()).apply();
+
+                    ((FragmentActivity)mContext).getSupportFragmentManager()
+                            .beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+                }
+            }
+        });
+
+    }
 
     @Override
     public int getItemCount() {

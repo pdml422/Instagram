@@ -30,6 +30,8 @@ import vn.edu.usth.instagram.Model.Post;
 import vn.edu.usth.instagram.Model.User;
 import vn.edu.usth.instagram.R;
 
+import java.util.HashMap;
+
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Viewholder>{
     private Context mContext;
     private List<Post> mPosts;
@@ -83,10 +85,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Viewholder>{
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 if (holder.like.getTag().equals("like")) {
                     FirebaseDatabase.getInstance().getReference().child("Likes")
                             .child(post.getPostid()).child(firebaseUser.getUid()).setValue(true);
+
+                    addNotification(post.getPostid(), post.getPublisher());
                 } else {
                     FirebaseDatabase.getInstance().getReference().child("Likes")
                             .child(post.getPostid()).child(firebaseUser.getUid()).removeValue();
@@ -267,5 +271,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Viewholder>{
             }
         });
     }
+    private void addNotification(String postId, String publisherId) {
+        HashMap<String, Object> map = new HashMap<>();
 
+        map.put("userid", publisherId);
+        map.put("text", "liked your post.");
+        map.put("postid", postId);
+        map.put("isPost", true);
+
+        FirebaseDatabase.getInstance().getReference().child("Notifications").child(firebaseUser.getUid()).push().setValue(map);
+    }
 }

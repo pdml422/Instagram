@@ -29,6 +29,8 @@ import vn.edu.usth.instagram.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import java.util.HashMap;
+
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
 
     private Context mContext;
@@ -73,6 +75,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
                     FirebaseDatabase.getInstance().getReference().child("Follow").child((firebaseUser.getUid())).child("following").child(user.getId()).setValue(true);
 
                     FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId()).child("followers").child(firebaseUser.getUid()).setValue(true);
+
+                    addNotification(user.getId());
                 } else {
                     FirebaseDatabase.getInstance().getReference().child("Follow").child((firebaseUser.getUid())).child("following").child(user.getId()).removeValue();
 
@@ -96,6 +100,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
             }
         });
 
+    }
+
+    private void addNotification(String userId) {
+        HashMap<String, Object> map = new HashMap<>();
+
+        map.put("userid", userId);
+        map.put("text", "started following you.");
+        map.put("postid", "");
+        map.put("isPost", false);
+
+        FirebaseDatabase.getInstance().getReference().child("Notifications").child(firebaseUser.getUid()).push().setValue(map);
     }
 
     private void isFollowed(final String id, Button btnFollow) {
