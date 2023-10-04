@@ -171,7 +171,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder>{
                         textView.setText("My Story");
                         imageView.setVisibility(View.GONE);
                     } else {
-                        textView.setText("Add Story");
+                        textView.setText("Add");
                         imageView.setVisibility(View.VISIBLE);
                     }
                 }
