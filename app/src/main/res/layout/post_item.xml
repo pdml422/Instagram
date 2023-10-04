@@ -98,23 +98,18 @@
             android:id="@+id/no_of_likes"
             android:textStyle="bold"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/author"
-                android:layout_marginStart="10dp"
-                android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/author"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold" />
 
-            <com.hendraanggrian.appcompat.socialview.widget.SocialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/description"
-                android:layout_marginStart="5dp"
-                android:layout_toEndOf="@+id/author"/>
-        </RelativeLayout>
+        <com.hendraanggrian.appcompat.socialview.widget.SocialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"
+            android:layout_marginStart="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
