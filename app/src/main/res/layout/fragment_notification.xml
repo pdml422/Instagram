@@ -61,7 +61,7 @@
 
                     android:textStyle="bold"
 
-                    android:textColor="@color/colorPrimary"/>
+                    />
 
 
 
