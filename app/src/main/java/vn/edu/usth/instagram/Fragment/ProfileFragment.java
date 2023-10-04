@@ -153,6 +153,8 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 recyclerView.setVisibility(View.VISIBLE);
                 recyclerViewSaves.setVisibility(View.GONE);
+                savedPictures.setImageResource(R.drawable.ic_save);
+                myPictures.setImageResource(R.drawable.ic_person);
             }
         });
 
@@ -161,6 +163,8 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 recyclerView.setVisibility(View.GONE);
                 recyclerViewSaves.setVisibility(View.VISIBLE);
+                savedPictures.setImageResource(R.drawable.ic_save_black);
+                myPictures.setImageResource(R.drawable.ic_person_light);
             }
         });
 
@@ -345,7 +349,11 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
 
-                Picasso.get().load(user.getImageurl()).into(imageProfile);
+                if (user.getImageurl().equals("default")) {
+                    imageProfile.setImageResource(R.mipmap.ic_launcher);
+                } else {
+                    Picasso.get().load(user.getImageurl()).into(imageProfile);
+                }
                 username.setText(user.getUsername());
                 fullname.setText(user.getName());
                 bio.setText(user.getBio());
