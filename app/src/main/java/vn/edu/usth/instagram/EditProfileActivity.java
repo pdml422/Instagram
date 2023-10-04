@@ -128,6 +128,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 updateProfile(fullname.getText().toString() ,
                         username.getText().toString() ,
                         bio.getText().toString());
+                Toast.makeText(getApplicationContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -209,8 +210,6 @@ public class EditProfileActivity extends AppCompatActivity {
             uploadImage();
             } else if (resultCode == ImagePicker.RESULT_ERROR) {
                 Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show();
             }
         }
     }
