@@ -112,4 +112,17 @@
         android:background="#20000000"
         tools:ignore="ContentDescription" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
+        android:id="@+id/story_close"
+        android:background="#20000000"
+        tools:ignore="ContentDescription" />
+
 </RelativeLayout>
