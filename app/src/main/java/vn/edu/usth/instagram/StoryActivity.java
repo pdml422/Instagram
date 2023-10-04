@@ -1,5 +1,6 @@
 package vn.edu.usth.instagram;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -43,6 +44,7 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
     LinearLayout r_seen;
     TextView seen_number;
     ImageView story_delete;
+    ImageView story_close;
 
     List<String> images;
     List<String> storyids;
@@ -67,6 +69,7 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
         }
     };
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +78,7 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
         r_seen = findViewById(R.id.r_seen);
         seen_number = findViewById(R.id.seen_number);
         story_delete = findViewById(R.id.story_delete);
+        story_close = findViewById(R.id.story_close);
 
         storiesProgressView = findViewById(R.id.stories);
         image = findViewById(R.id.image);
@@ -137,6 +141,13 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
                         }
                     }
                 });
+            }
+        });
+
+        story_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
