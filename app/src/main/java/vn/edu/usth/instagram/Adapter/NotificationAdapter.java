@@ -70,7 +70,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             public void onClick(View v) {
                 if (notification.isIsPost()) {
                     mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE)
-                            .edit().putString("postid", notification.getPostid()).apply();
+                            .edit().putString("postId", notification.getPostid()).apply();
 
                     ((FragmentActivity)mContext).getSupportFragmentManager()
                             .beginTransaction().replace(R.id.fragment_container, new PostDetailFragment()).commit();
@@ -113,7 +113,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Post post = dataSnapshot.getValue(Post.class);
-                Picasso.get().load(post.getImageurl()).placeholder(R.mipmap.ic_launcher).into(imageView);
+                Picasso.get().load(post.getImageurl()).into(imageView);
             }
 
             @Override
