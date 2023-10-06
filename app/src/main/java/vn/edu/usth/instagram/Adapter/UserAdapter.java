@@ -110,7 +110,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         map.put("postid", "");
         map.put("isPost", false);
 
-        FirebaseDatabase.getInstance().getReference().child("Notifications").child(firebaseUser.getUid()).push().setValue(map);
+        FirebaseDatabase.getInstance().getReference().child("Notifications").child(userId).push().setValue(map);
     }
 
     private void isFollowed(final String id, Button btnFollow) {
