@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -62,6 +63,8 @@ public class ProfileFragment extends Fragment {
     private TextView bio;
     private ImageView myPictures;
     private ImageView savedPictures;
+    private LinearLayout followers1;
+    private LinearLayout following1;
 
     private FirebaseUser fUser;
     String profileId;
@@ -80,8 +83,8 @@ public class ProfileFragment extends Fragment {
             profileId = data;
             getContext().getSharedPreferences("PROFILE", Context.MODE_PRIVATE).edit().clear().apply();
         }
-
-
+        followers1 = view.findViewById(R.id.followers1);
+        following1 = view.findViewById(R.id.following1);
         imageProfile = view.findViewById(R.id.image_profile);
         options = view.findViewById(R.id.options);
         edit_profile = view.findViewById(R.id.edit_profile);
@@ -175,7 +178,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        followers.setOnClickListener(new View.OnClickListener() {
+        followers1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), FollowersActivity.class);
@@ -185,7 +188,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        following.setOnClickListener(new View.OnClickListener() {
+        following1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), FollowersActivity.class);
