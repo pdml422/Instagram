@@ -102,12 +102,14 @@ public class AddStoryActivity extends AppCompatActivity {
 
                     } else {
                         Toast.makeText(AddStoryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(AddStoryActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             });
 
@@ -130,6 +132,7 @@ public class AddStoryActivity extends AppCompatActivity {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 }
