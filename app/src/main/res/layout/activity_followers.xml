@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         android:id="@+id/toolbar"
-        android:textAlignment="center"
-        app:titleTextColor="@color/colorPrimary"/>
+        android:textAlignment="center" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
