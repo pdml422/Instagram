@@ -30,6 +30,7 @@ import vn.edu.usth.instagram.Model.User;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //Input
     private TextInputLayout email;
     private TextInputLayout password;
     private Button sign_up;
