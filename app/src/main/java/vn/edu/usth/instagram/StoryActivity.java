@@ -122,7 +122,7 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
                 Intent intent = new Intent(StoryActivity.this , FollowersActivity.class);
                 intent.putExtra("id" , userid);
                 intent.putExtra("storyid" , storyids.get(counter));
-                intent.putExtra("title" , "views");
+                intent.putExtra("title" , "Views");
                 startActivity(intent);
             }
         });
