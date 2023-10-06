@@ -120,9 +120,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child(id).exists())
-                    btnFollow.setText("following");
+                    btnFollow.setText("Following");
                 else
-                    btnFollow.setText("follow");
+                    btnFollow.setText("Follow");
             }
 
             @Override
