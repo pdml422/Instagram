@@ -253,7 +253,7 @@ public class StoryActivity extends AppCompatActivity implements StoriesProgressV
 
     private void seenNumber (String storyid) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Story")
-                .child(userid).child(storyid).child("views");
+                .child(userid).child(storyid).child("view");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
