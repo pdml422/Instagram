@@ -71,7 +71,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         holder.btnFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.btnFollow.getText().toString().equals(("follow"))){
+                if (holder.btnFollow.getText().toString().equals(("Follow"))){
                     FirebaseDatabase.getInstance().getReference().child("Follow").child((firebaseUser.getUid())).child("following").child(user.getId()).setValue(true);
 
                     FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId()).child("followers").child(firebaseUser.getUid()).setValue(true);
