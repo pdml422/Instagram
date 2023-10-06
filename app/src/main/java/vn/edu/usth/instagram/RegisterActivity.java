@@ -151,7 +151,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         String userid = firebaseUser.getUid();
-                        imageUrl = "default";
+                        imageUrl = "https://firebasestorage.googleapis.com/v0/b/instagram-58614.appspot.com/o/uploads%2F1696428599221.null?alt=media&token=1b90f657-62ed-462e-9a15-8fefa52cd631";
                         bio = "";
 
                         mRootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
